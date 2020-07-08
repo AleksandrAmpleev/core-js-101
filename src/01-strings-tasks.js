@@ -35,7 +35,6 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  // throw new Error('Not implemented');
   return value.length;
 }
 
@@ -134,8 +133,11 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const t = str.indexOf(value);
+  const p1 = str.slice(0, t);
+  const p2 = str.slice(t + value.length, str.length);
+  return p1 + p2;
 }
 
 /**
