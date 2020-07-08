@@ -19,7 +19,6 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  //throw new Error('Not implemented');
   return value1 + value2;
 }
 
@@ -36,7 +35,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  //throw new Error('Not implemented');
+  // throw new Error('Not implemented');
   return value.length;
 }
 
@@ -53,8 +52,8 @@ function getStringLength(value) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate( firstName, lastName ) {
-  //throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  // throw new Error('Not implemented');
   return `Hello, ${firstName} ${lastName}!`;
 }
 
@@ -84,8 +83,8 @@ function extractNameFromTemplate(/* value */) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  //throw new Error('Not implemented');
-  return valiue[0];
+  // throw new Error('Not implemented');
+  return value[0];
 }
 
 /**
@@ -115,12 +114,12 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  //throw new Error('Not implemented');
-  var t = [];
-  for (var i = 0; i < count; i++) {
-    t.push(value);
-  }
-  return t.join('');
+  // throw new Error('Not implemented');
+  // const t = [];
+  // for (let i = 0; i < count; i++) {
+  //  t.push(value);
+  // }
+  return value.repeat(count); // t.join('');
 }
 
 /**
@@ -150,8 +149,8 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag( str) {
-  //throw new Error('Not implemented');
+function unbracketTag(str) {
+  // throw new Error('Not implemented');
   return str.replace('<', '').replace('>', '');
 }
 
@@ -167,7 +166,7 @@ function unbracketTag( str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  //throw new Error('Not implemented');
+  // throw new Error('Not implemented');
   return str.toUpperCase();
 }
 
