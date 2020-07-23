@@ -313,8 +313,17 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  let ret = [];
+  let index = 1;
+  arr.map((item) => {
+    const a = new Array(index);
+    a.fill(item, 0, index);
+    ret = ret.concat(a);
+    index += 1;
+    return 1;
+  });
+  return ret;
 }
 
 
@@ -331,8 +340,17 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  const ar = arr.sort((a, b) => {
+    if (a > b) { return 1; }
+    if (a === b) { return 0; }
+    if (a < b) { return -1; }
+    return 0;
+  });
+  if (ar.length < 4) {
+    return ar.reverse();
+  }
+  return ar.slice(-3).reverse();
 }
 
 
@@ -349,8 +367,15 @@ function get3TopItems(/* arr */) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  let ret = 0;
+  arr.map((item) => {
+    if ((typeof (item) === 'number' || item instanceof Number) && item > 0) {
+      ret += 1;
+    }
+    return 1;
+  });
+  return ret;
 }
 
 /**
@@ -382,8 +407,8 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  return arr.reduce((sum, current) => sum + current, 0);
 }
 
 /**
@@ -398,8 +423,15 @@ function getItemsSum(/* arr */) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let ret = 0;
+  arr.map((item) => {
+    if (!item) {
+      ret += 1;
+    }
+    return 1;
+  });
+  return ret;
 }
 
 /**
@@ -416,8 +448,16 @@ function getFalsyValuesCount(/* arr */) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurences(arr, item) {
+  const target = item;
+  let ret = 0;
+  arr.map((it) => {
+    if (it === target) {
+      ret += 1;
+    }
+    return 1;
+  });
+  return ret;
 }
 
 /**
