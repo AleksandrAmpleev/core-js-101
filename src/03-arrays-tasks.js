@@ -471,8 +471,8 @@ function findAllOccurences(arr, item) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 
@@ -524,8 +524,18 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const ret = [];
+  const matrix = new Array(n);
+  matrix.fill([], 0, n);
+  matrix.map((value, index) => {
+    const a = new Array(n);
+    a.fill(0, 0, n);
+    a[index] = 1;
+    ret.push(a);
+    return a;
+  });
+  return ret;
 }
 
 /**
