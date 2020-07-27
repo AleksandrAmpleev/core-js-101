@@ -97,8 +97,10 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  const t = value.trim();
+  t.replace(/\t/g, '');
+  return t;
 }
 
 /**
@@ -214,8 +216,8 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(width, height) {
-  const topBottom = [];
+
+/*  const topBottom = [];
   let space = [];
   let totalSpace = '';
   if (width > 2) {
@@ -236,6 +238,9 @@ function getRectangleString(width, height) {
 
   const template = `┌${topBottom.join('')}┐\n${totalSpace}└${topBottom.join('')}┘\n`;
   return template;
+ */
+function getRectangleString(/* width, height */) {
+  throw new Error('Not implemented');
 }
 
 
