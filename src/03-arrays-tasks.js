@@ -677,8 +677,37 @@ function getElementByIndexes(/* arr, indexes */) {
  */
 function swapHeadAndTail(arr) {
   const center = arr.length % 2;
-  const half = Math.trunc(arr / 2);
+  const tail = Math.trunc(arr.length / 2);
 
+  const rez = [];
+  let frst = 0;
+
+  arr.map(
+    (value) => {
+      frst += 1;
+      if (tail + center < frst) {
+        rez.push(value);
+      }
+      return 1;
+    },
+  );
+
+  if (center > 0) {
+    rez.push(arr[Math.trunc(arr.length / 2)]);
+  }
+  frst = 0;
+
+  arr.map(
+    (value) => {
+      frst += 1;
+      if (frst <= tail) {
+        rez.push(value);
+      }
+      return 1;
+    },
+  );
+
+  return rez;
 }
 
 
