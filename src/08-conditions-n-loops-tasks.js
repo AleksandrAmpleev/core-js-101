@@ -43,8 +43,10 @@ function getFizzBuzz(/* num */) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (typeof (n) === 'number' && n < 13 && n > -1) { return (n > 1) ? n * getFactorial(n - 1) : 1; }
+
+  throw new RangeError(`${n.toString()}=n`);
 }
 
 
