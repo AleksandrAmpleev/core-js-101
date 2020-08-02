@@ -52,9 +52,29 @@ function parseDataFromIso8601(value) {
  *    Date(2001,1,1)    => false
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
+ *
+ *    if y mod 4 <> 0 then writeln('�������')
+    else
+        if y mod 100 = 0 then
+            if y mod 400 = 0 then writeln('����������')
+            else writeln('�������')
+        else writeln('����������');
+
+        return !((date.Year % 4 !== 0) || (date.Year % 100 === 0) && (date.Year % 400 !== 0));
+ *
+ *
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+function isLeapYear(date) {
+  let ret = false;
+  const year = date.getFullYear();
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        ret = true;
+      } else { ret = false; }
+    } else { ret = true; }
+  }
+  return ret;
 }
 
 
