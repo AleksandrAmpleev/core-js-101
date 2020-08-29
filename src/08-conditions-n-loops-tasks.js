@@ -190,8 +190,19 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const arr = str.split('');
+  let charRZ = null;
+  arr.map((item) => {
+    if (charRZ === null) {
+      const test = str.split(item);
+      if (test.length === 2) {
+        charRZ = item;
+      }
+    }
+    return 1;
+  });
+  return charRZ;
 }
 
 
@@ -286,8 +297,25 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(/* ccn */) {
-  throw new Error('Not implemented');
+function isCreditCardNumber(ccn) {
+  let sum = 0;
+  const strccn = ccn.toString();
+
+  for (let i = 0; i < strccn.length; i += 1) {
+    let cardNum = parseInt(strccn[i], 10);
+
+    if ((strccn.length - i) % 2 === 0) {
+      cardNum *= 2;
+
+      if (cardNum > 9) {
+        cardNum -= 9;
+      }
+    }
+
+    sum += cardNum;
+  }
+
+  return sum % 10 === 0;
 }
 
 /**
@@ -304,8 +332,20 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  let sumM = num;
+  const strNm = sumM.toString().split('');
+
+  sumM = 0;
+  strNm.map((item) => {
+    const sm = parseInt(item, 10);
+    sumM += sm;
+    return 1;
+  });
+  if (sumM > 9) {
+    sumM = getDigitalRoot(sumM);
+  }
+  return sumM;
 }
 
 
