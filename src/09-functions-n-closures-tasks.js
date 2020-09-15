@@ -49,8 +49,13 @@ function getComposition(f, g) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction(/* exponent */) {
-  throw new Error('Not implemented');
+function getPowerFunction(exponent) {
+  const doStuff = (x) => {
+    if (x !== 0) {
+      return x ** exponent;
+    } return 0;
+  };
+  return doStuff;
 }
 
 
