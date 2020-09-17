@@ -391,8 +391,19 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const tmpArr = arr.map((currentValue) => currentValue.toString().replace('zero', 0).replace('one', 1)
+    .replace('two', 2)
+    .replace('three', 3)
+    .replace('four', 4)
+    .replace('five', 5)
+    .replace('six', 6)
+    .replace('seven', 7)
+    .replace('eight', 8)
+    .replace('nine', 9));
+  const cnst = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const rez = tmpArr.sort().map((currentValue) => cnst[currentValue]);
+  return rez;
 }
 
 /**
